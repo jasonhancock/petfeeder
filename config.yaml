@@ -1,0 +1,6 @@
+---
+schedule:
+  - time: 04:46
+    duration: 30s
+  - time: 10:45
+    duration: 45s
