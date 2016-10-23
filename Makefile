@@ -1,11 +1,8 @@
-all: test install
+all: deps test build
 	@true
 
 test:
 	go test -v
-
-install:
-	go install
 
 deps:
 	go get github.com/jasonlvhit/gocron
@@ -13,4 +10,8 @@ deps:
 	go get github.com/stianeikeland/go-rpio
 
 build:
-	GOOS=linux GOARCH=arm go build
+	GOOS=linux GOARCH=arm go build -o petfeeder
+
+package:
+	    $(MAKE) -C debian
+
