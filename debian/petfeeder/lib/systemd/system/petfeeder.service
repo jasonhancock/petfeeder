@@ -1,0 +1,12 @@
+[Unit]
+Description=Petfeeder
+After=basic.target network.target
+
+[Service]
+ExecStart=/bin/sh -c "/usr/sbin/petfeeder >> /var/log/petfeeder/petfeeder.log 2>&1"
+Restart=always
+RestartSec=3
+KillMode=control-group
+
+[Install]
+WantedBy=multi-user.target

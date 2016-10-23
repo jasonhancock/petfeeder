@@ -2,11 +2,11 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"log"
 	"time"
 
 	"github.com/jasonlvhit/gocron"
+	"github.com/stianeikeland/go-rpio"
 )
 
 func feed(dur time.Duration) {
@@ -20,6 +20,16 @@ func feed(dur time.Duration) {
 func main() {
 	configFile := flag.String("c", "/etc/petfeeder/config.yaml", "configuration file")
 	flag.Parse()
+
+	err := rpio.Open()
+
+	if err != nil {
+		panic(err)
+	}
+
+	pin := rpio.Pin(14)
+	pin.Output() // Output mode
+	pin.Low()    // Set pin High
 
 	conf, err := loadConfigFile(*configFile)
 	if err != nil {

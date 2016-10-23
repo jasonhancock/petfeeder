@@ -1,0 +1,7 @@
+Package: petfeeder
+Version: 0.0.1
+Section: base
+Priority: optional
+Architecture: all
+Maintainer: Jason Hancock <jason@jasonhancock.com>
+Description: Raspberry Pi Pet Feeder

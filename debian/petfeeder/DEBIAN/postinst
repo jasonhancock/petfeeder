@@ -1,0 +1,6 @@
+#!/bin/sh
+
+[ ! -d /var/log/fermpi ] && mkdir /var/log/fermpi
+
+chown root.root /etc/logrotate.d/petfeeder
+chmod 0644 /etc/logrotate.d/petfeeder
