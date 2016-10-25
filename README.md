@@ -34,5 +34,6 @@ I built this mainly out of components I had on hand. The only thing I needed to 
 * #6 washers
 
 
+## Feed Duration
 
-
+I loaded up the feeder with the target kibble. I ran the feeder for 5 seconds several times and weighed the resulting kibble. On average, the feeder was dispensing 15g of kibble per second. I then weighed out 1/3 cup by volume of kibble. On average it was 42 grams. That means I need to run the machine for approximately 3 seconds at a time, three times a day for my cat to receive the proper amount of food. I'm going to err on the side of caution and run the machine for 3300ms, which should deliver a dose of 49.5 grams of food per feeding.

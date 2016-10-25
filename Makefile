@@ -11,7 +11,8 @@ deps:
 
 build:
 	GOOS=linux GOARCH=arm go build -o petfeeder
+	$(MAKE) -C cmd/manualfeed
 
 package:
-	    $(MAKE) -C debian
+	$(MAKE) -C debian
 

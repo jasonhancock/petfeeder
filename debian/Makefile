@@ -10,8 +10,10 @@ endif
 all: clean
 	@sed -i "/^Version:/c\Version: $(version)" $(pkg)/DEBIAN/control
 	@(cd ../ && make)
+	@mkdir -p $(pkg)/usr/bin
 	@mkdir -p $(pkg)/usr/sbin
 	@mkdir -p $(pkg)/etc/petfeeder
+	@(install -m 0755 ../cmd/manualfeed/manualfeed $(pkg)/usr/bin/)
 	@(install -m 0755 ../petfeeder $(pkg)/usr/sbin/)
 	@(install -m 0644 ../config.yaml $(pkg)/etc/petfeeder/)
 	@find $(pkg) -name DEBIAN -prune -o -type f -exec md5sum {} \; > $(pkg)/DEBIAN/md5sums
