@@ -9,10 +9,12 @@ import (
 	"github.com/stianeikeland/go-rpio"
 )
 
-func feed(dur time.Duration) {
+func feed(dur time.Duration, pin rpio.Pin) {
 	log.Printf("running feed for %s\n", dur)
 
+	pin.High()
 	time.Sleep(dur)
+	pin.Low()
 
 	log.Println("done running feed")
 }
@@ -38,8 +40,7 @@ func main() {
 
 	for _, v := range conf.Schedule {
 		log.Printf("Scheduling a job at %s for %s\n", v.Time, v.Duration)
-		gocron.Every(1).Day().At(v.Time).Do(feed, v.Duration)
-
+		gocron.Every(1).Day().At(v.Time).Do(feed, v.Duration, pin)
 	}
 
 	<-gocron.Start()
