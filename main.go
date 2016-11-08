@@ -29,6 +29,10 @@ func main() {
 		panic(err)
 	}
 
+	pin := rpio.Pin(14)
+	pin.Output()
+	pin.Low()
+
 	// Pin 15 is hooked up to relay 2 and wired in normally closed fashion. Thus,
 	// when we drive it low here, the relay starts passing the signal. This gates
 	// the signal on pin 14 during the boot process, otherwise the output on pin
@@ -37,11 +41,7 @@ func main() {
 	// of the power being restored after a power-outage.
 	interlockPin := rpio.Pin(15)
 	interlockPin.Output()
-	interlockPin.Low()
-
-	pin := rpio.Pin(14)
-	pin.Output()
-	pin.Low()
+	interlockPin.High()
 
 	conf, err := loadConfigFile(*configFile)
 	if err != nil {
