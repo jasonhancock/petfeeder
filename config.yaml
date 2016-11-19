@@ -1,6 +1,10 @@
 ---
+addr: :8080
+assets: /vagrant/assets
+templates: /vagrant/templates
+default_duration: 3000ms
 schedule:
-  - time: 04:46
-    duration: 30s
+  - time: 06:01
+    duration: 2s
   - time: 10:45
     duration: 45s

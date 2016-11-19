@@ -10,7 +10,11 @@ import (
 )
 
 type Config struct {
-	Schedule []Task `yaml:"schedule"`
+	Addr            string        `yaml:"addr"`
+	Assets          string        `yaml:"assets"`
+	DefaultDuration time.Duration `yaml:"default_duration"`
+	Schedule        []Task        `yaml:"schedule"`
+	Templates       string        `yaml:"templates"`
 }
 
 type Task struct {
