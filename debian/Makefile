@@ -12,10 +12,14 @@ all: clean
 	@(cd ../ && make)
 	@mkdir -p $(pkg)/usr/bin
 	@mkdir -p $(pkg)/usr/sbin
+	@mkdir -p $(pkg)/usr/share/petfeeder
 	@mkdir -p $(pkg)/etc/petfeeder
 	@(install -m 0755 ../cmd/manualfeed/manualfeed $(pkg)/usr/bin/)
 	@(install -m 0755 ../petfeeder $(pkg)/usr/sbin/)
 	@(install -m 0644 ../config.yaml $(pkg)/etc/petfeeder/)
+	@(sed -i 's/vagrant/usr\/share\/petfeeder/' $(pkg)/etc/petfeeder/config.yaml)
+	@(rsync -a ../assets/ $(pkg)/usr/share/petfeeder/assets)
+	@(rsync -a ../templates/ $(pkg)/usr/share/petfeeder/templates)
 	@find $(pkg) -name DEBIAN -prune -o -type f -exec md5sum {} \; > $(pkg)/DEBIAN/md5sums
 	@dpkg-deb -b $(pkg) $(pkg)-$(version).deb
 clean:
