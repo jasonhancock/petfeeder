@@ -50,4 +50,4 @@ I also built in a web server that allows you to dispense a feeding on demand. Th
 
 I could have easily written this project in Python. I've built several things for Raspberry Pi's that are written in Python. I know enough Python to be dangerous, but I don't work with the language every day. Lately I've been writing a lot of Go...to the point where it's become my primary language for most tasks. As this is a relatively simple/straightforward project, I felt it was a good way to dabble with Go and GPIO on the Pi.
 
-I didn't want to install the Go runtime on the Pi. Thankfully, you can cross compile Go from x86\_64 to arm; this allows me to develop on a x86\_64 Debian machine, package the code, then deploy a built .deb to the Pi. See the [Makefile](Makefile) For more details.
+I didn't want to install the Go runtime on the Pi. Thankfully, you can cross compile Go from x86\_64 to arm; this allows me to develop on a x86\_64 Debian machine, package the code, then deploy a built .deb to the Pi. See the [Makefile](Makefile) for more details.
