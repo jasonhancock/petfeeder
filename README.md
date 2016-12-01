@@ -4,6 +4,10 @@ A Raspberry Pi powered cat feeder
 
 [Video on YouTube](https://www.youtube.com/watch?v=s813IpMfKfs)
 
+[![backside](https://raw.githubusercontent.com/jasonhancock/petfeeder/master/pics/back_thumb.jpg)](https://raw.githubusercontent.com/jasonhancock/petfeeder/master/pics/back.jpg)
+
+[![profile](https://raw.githubusercontent.com/jasonhancock/petfeeder/master/pics/profile_thumb.jpg)](https://raw.githubusercontent.com/jasonhancock/petfeeder/master/pics/profile.jpg)
+
 ## Why?
 
 My family is preparing to take a trip and the folks who usually look after our cat are also out of town. Rather than put him in a kennel, leave out a big bowl of food, etc., I decided to wire up something myself.
